@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mukesh | Junior Python Developer Portfolio</title>
+<meta name="description" content="Portfolio of Mukesh, a BCA graduate and Junior Python Developer open to entry-level software roles and internships.">
+<meta property="og:title" content="Mukesh | Junior Python Developer">
+<meta property="og:description" content="Python projects, skills, education and contact details.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/profile.png">
+<!-- Favicon: emoji placeholder. Replace with assets/favicon.png when you have one. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== THEME: change colors here ===== */
+:root{
+  --bg:#0c0b10; --surface:#16131f; --line:rgba(255,255,255,.09);
+  --text:#f5f3fb; --muted:#b9b3cb;
+  --v1:#a78bfa; --v2:#8b5cf6; --v3:#c026d3;
+  --grad:linear-gradient(135deg,#8b5cf6,#c026d3);
+  --glow:0 0 32px rgba(139,92,246,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--bg);color:var(--muted);font:400 1.0625rem/1.7 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;color:var(--text);line-height:1.15}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--v1);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:clamp(64px,10vw,112px) 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.lead{max-width:62ch;margin-bottom:40px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 14px;border-radius:8px;z-index:99}
+.skip:focus{left:8px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;font-size:1rem;border:1px solid var(--line);color:var(--text);background:transparent;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.06)}
+.btn.primary{background:var(--grad);border-color:transparent;color:#fff}
+.btn.primary:hover{box-shadow:var(--glow);background:var(--grad)}
+.btn.sm{padding:9px 18px;font-size:.95rem}
+
+/* Navigation */
+header{position:fixed;top:14px;left:0;right:0;z-index:50}
+nav{width:min(1120px,92%);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 24px;border-radius:999px;background:rgba(22,19,31,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}
+.logo{font:800 1.2rem Sora,sans-serif;color:var(--text)}
+.logo span{color:var(--v1)}
+.links{display:flex;gap:6px;list-style:none;align-items:center}
+.links a{padding:8px 14px;border-radius:999px;font-size:.95rem;transition:color .2s,background .2s}
+.links a:hover{color:var(--text)}
+.links a.active{color:var(--text);background:rgba(139,92,246,.2)}
+.links a.btn{margin-left:6px;color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+@media(max-width:820px){
+  .burger{display:block}
+  .links{position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:stretch;padding:14px;border-radius:24px;background:rgba(22,19,31,.97);border:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  .links a{display:block;padding:12px 16px}
+  .links a.btn{justify-content:center;margin:6px 0 0}
+}
+
+/* Hero */
+.hero{padding-top:150px;position:relative}
+.hero::before{content:"";position:absolute;inset:0 0 auto 0;height:620px;background:radial-gradient(600px 360px at 80% 20%,rgba(139,92,246,.25),transparent 70%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;margin-bottom:22px;background:rgba(255,255,255,.03)}
+.dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.2)}
+h1{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:22px}
+h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+.role{color:var(--v1);font-weight:700;margin-bottom:12px;min-height:1.7em}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--v1);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.sub{max-width:54ch;margin-bottom:30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.photo{justify-self:center;width:min(360px,80%);aspect-ratio:4/5;border-radius:180px 180px 28px 28px;padding:6px;background:var(--grad);box-shadow:var(--glow)}
+.photo .inner{width:100%;height:100%;border-radius:174px 174px 22px 22px;overflow:hidden;background:var(--surface);display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.photo .ph{font:800 5rem Sora,sans-serif;color:var(--v1)}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.photo{order:-1;width:min(240px,70%)}}
+
+/* Cards */
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.g2,.g4{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.5);box-shadow:var(--glow)}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+
+/* About */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:40px}
+.about p+p{margin-top:16px}
+.facts{list-style:none;display:grid;gap:14px}
+.facts li{padding:16px 20px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.facts b{display:block;color:var(--text)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+
+/* Skills */
+.skills{display:flex;flex-wrap:wrap;gap:14px}
+.skill{padding:14px 26px;border-radius:999px;font:700 1.05rem Sora,sans-serif;color:var(--text);background:var(--surface);border:1px solid rgba(167,139,250,.45);transition:box-shadow .2s,transform .2s}
+.skill:hover{box-shadow:var(--glow);transform:translateY(-2px)}
+
+/* Projects (subtle glass) */
+.project{padding:0;overflow:hidden;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;flex-direction:column}
+.shot{aspect-ratio:16/9;background:linear-gradient(135deg,#1d1830,#2a1b4a);display:grid;place-items:center;text-align:center;padding:16px;color:var(--v1);font-weight:700;overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover}
+.pbody{padding:26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tags li{font-size:.85rem;padding:4px 12px;border-radius:999px;background:rgba(139,92,246,.18);color:var(--text)}
+.pbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.todo{font-size:.95rem;border-left:3px solid var(--v2);padding-left:12px}
+
+/* Education */
+.edu{display:flex;gap:20px;align-items:flex-start}
+.edu .mark{flex:none;width:56px;height:56px;border-radius:16px;background:var(--grad);display:grid;place-items:center;font-size:1.6rem}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px}
+.clist{list-style:none;display:grid;gap:14px}
+.clist li{display:flex;flex-direction:column}
+.clist b{color:var(--text)}
+.clist a:hover{color:var(--v1)}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+label{display:block;color:var(--text);font-weight:600;margin-bottom:6px;font-size:.95rem}
+input,textarea{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:#0f0d16;color:var(--text);font:inherit}
+input:focus,textarea:focus{border-color:var(--v1)}
+textarea{min-height:140px;resize:vertical}
+.err{color:#fda4af;font-size:.88rem;min-height:1.2em;display:block}
+[aria-invalid="true"]{border-color:#fb7185}
+#status{padding:12px 16px;border-radius:14px;display:none}
+#status.ok{display:block;background:rgba(74,222,128,.12);color:#86efac}
+#status.bad{display:block;background:rgba(251,113,133,.12);color:#fda4af}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer ul{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none}
+footer a:hover{color:var(--v1)}
+
+/* Reveal on scroll: one subtle effect, only if JS runs */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <nav aria-label="Main">
+    <a class="logo" href="#home">Mukesh<span>.dev</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+    <ul class="links" id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn primary sm" href="#contact">Hire Me</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="badge"><span class="dot" aria-hidden="true"></span>Open to Junior Developer Opportunities</p>
+      <h1>Hi, I'm Mukesh. <span class="grad">Junior Python Developer Building Practical Digital Solutions.</span></h1>
+      <p class="role" aria-live="off"><span id="typed">Python Developer</span><span class="cursor" aria-hidden="true"></span></p>
+      <p class="sub">I enjoy solving problems with Python and building useful software projects. I'm actively looking for opportunities to learn, contribute, and grow as a developer.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View My Projects</a>
+        <a class="btn" href="#contact">Contact Me</a>
+        <!-- Put your real resume PDF in the SAME folder as this file and name it Mukesh_Resume.pdf -->
+        <a class="btn" href="Mukesh_Resume.pdf" download>Download Resume</a>
+      </div>
+    </div>
+    <div class="photo">
+      <div class="inner">
+        <!-- Save your cropped photo as assets/profile.png. If missing, the letter M shows instead. -->
+        <img src="assets/profile.png" alt="Portrait of Mukesh" width="360" height="450" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:'M'}))">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about reveal">
+    <div>
+      <h2>About me</h2>
+      <p>I'm a BCA student and aspiring software developer who works mainly in Python and also knows HTML. I like turning an idea into a working project, and I've built two so far: an expense tracker and an AI music generation model.</p>
+      <p>I learn by building, I enjoy breaking problems into small steps, and I'm keen to join a development team where I can keep growing, ask questions and contribute from day one.</p>
+    </div>
+    <ul class="facts">
+      <li><b>Education</b>BCA (Bachelor of Computer Applications)</li>
+      <li><b>Main language</b>Python</li>
+      <li><b>Goal</b>Junior Python or entry-level developer role</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap reveal">
+    <h2>Technical skills</h2>
+    <p class="lead">Technologies I work with.</p>
+    <div class="skills">
+      <span class="skill">Python</span>
+      <span class="skill">HTML</span>
+      <!-- Add only skills you genuinely know. Copy a line, change the name:
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Git</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">SQL</span>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap reveal">
+    <h2>Featured projects</h2>
+    <p class="lead">Two projects that show how I build and learn.</p>
+    <div class="grid g2">
+      <article class="card project">
+        <div class="shot"><img src="assets/expense-tracker.png" alt="Screenshot of the Expense Tracker Pro project" onerror="this.replaceWith(document.createTextNode('Add assets/expense-tracker.png'))"></div>
+        <div class="pbody">
+          <h3>Expense Tracker Pro</h3>
+          <p>A personal expense-tracking project built with Python.</p>
+          <p class="todo">[Add your real features here, for example what it records and how it shows your spending.]</p>
+          <ul class="tags"><li>Python</li><!-- add more tools you used --></ul>
+          <div class="pbtns">
+            <a class="btn primary sm" href="https://YOUR-LIVE-DEMO-URL" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn sm" href="https://github.com/YOUR-USERNAME/expense-tracker-pro" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="shot"><img src="assets/ai-music.png" alt="Output preview of the AI music generation project" onerror="this.replaceWith(document.createTextNode('Add assets/ai-music.png'))"></div>
+        <div class="pbody">
+          <h3>AI Music Generation Using GANs</h3>
+          <p>An AI/ML project exploring music generation with Generative Adversarial Networks.</p>
+          <p class="todo">[Add the model, tools, dataset and results from your implementation.]</p>
+          <ul class="tags"><li>Python</li><li>GANs</li><!-- add libraries you used --></ul>
+          <div class="pbtns">
+            <a class="btn primary sm" href="https://github.com/YOUR-USERNAME/ai-music-gan" target="_blank" rel="noopener">Source Code</a>
+            <a class="btn sm" href="https://github.com/YOUR-USERNAME/ai-music-gan#readme" target="_blank" rel="noopener">Project Details</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap reveal">
+    <h2>Education</h2>
+    <div class="card edu" style="margin-top:28px">
+      <div class="mark" aria-hidden="true">&#127891;</div>
+      <div>
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>[Add college name]</p>
+        <p>[Add graduation year]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKING FOR -->
+<section id="looking">
+  <div class="wrap reveal">
+    <h2>What I'm looking for</h2>
+    <p class="lead">Roles where I can contribute while I keep learning.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Junior Python roles</h3><p>Writing and improving Python code.</p></div>
+      <div class="card"><h3>Entry-level software roles</h3><p>Building features with a team.</p></div>
+      <div class="card"><h3>Python internships</h3><p>Hands-on experience on real work.</p></div>
+      <div class="card"><h3>Supportive teams</h3><p>Beginner-friendly places to grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact reveal">
+    <div>
+      <h2>Let's talk</h2>
+      <p class="lead">Hiring for a junior role or internship? Send a message.</p>
+      <ul class="clist">
+        <li><b>Email</b><a href="mailto:your.email@example.com">[Add professional email]</a></li>
+        <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">[Add profile URL]</a></li>
+        <li><b>GitHub</b><a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">[Add profile URL]</a></li>
+        <li><b>Location</b><span>[Add city, optional]</span></li>
+      </ul>
+    </div>
+    <!--
+      HOW TO RECEIVE MESSAGES (no backend needed):
+      1. Create a free form at formspree.io and copy your form URL.
+      2. Paste it into the action below, replacing YOUR_FORM_ID.
+      (On Netlify you can use Netlify Forms instead.)
+    -->
+    <form id="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <div class="row">
+        <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" id="e-email"></span></div>
+      </div>
+      <div><label for="subject">Subject</label><input id="subject" name="subject" required><span class="err" id="e-subject"></span></div>
+      <div><label for="message">Message</label><textarea id="message" name="message" required></textarea><span class="err" id="e-message"></span></div>
+      <button class="btn primary" type="submit">Send message</button>
+      <p id="status" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Designed and built by Mukesh</p>
+    <ul aria-label="Footer navigation">
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Mobile menu */
+const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+function setMenu(open){ menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { setMenu(false); burger.focus(); } });
+
+/* Scroll reveal and active nav link */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const navLinks = [...document.querySelectorAll('.links a:not(.btn)')];
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+}), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
+
+/* Typing effect (static text is the default, so it stays readable without motion) */
+const words = ['Python Developer', 'Problem Solver', 'Continuous Learner'];
+const typed = document.getElementById('typed');
+if (!reduce) {
+  let w = 0, c = 0, del = false;
+  (function tick(){
+    const word = words[w];
+    typed.textContent = word.slice(0, c);
+    if (!del && c === word.length) { del = true; return setTimeout(tick, 1600); }
+    if (del && c === 0) { del = false; w = (w + 1) % words.length; }
+    c += del ? -1 : 1;
+    setTimeout(tick, del ? 45 : 85);
+  })();
+}
+
+/* Contact form validation */
+const form = document.getElementById('form'), status = document.getElementById('status');
+const rules = {
+  name: v => v.trim() ? '' : 'Enter your name.',
+  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Enter a valid email address.',
+  subject: v => v.trim() ? '' : 'Enter a subject.',
+  message: v => v.trim().length >= 10 ? '' : 'Write at least 10 characters.'
+};
+function check(id){
+  const el = document.getElementById(id), msg = rules[id](el.value);
+  document.getElementById('e-' + id).textContent = msg;
+  el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+  return !msg;
+}
+Object.keys(rules).forEach(id => document.getElementById(id).addEventListener('blur', () => check(id)));
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  status.className = '';
+  const results = Object.keys(rules).map(check);
+  if (results.includes(false)) { document.querySelector('[aria-invalid="true"]').focus(); return; }
+  if (form.action.includes('YOUR_FORM_ID')) {
+    status.textContent = 'The form is not connected yet. Add your Formspree URL in the form action (see the comment in index.html).';
+    status.className = 'bad'; return;
+  }
+  try {
+    const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (!r.ok) throw new Error();
+    form.reset(); status.textContent = 'Message sent. Thank you, I will reply soon.'; status.className = 'ok';
+  } catch { status.textContent = 'Could not send the message. Please email me directly instead.'; status.className = 'bad'; }
+});
+</script>
+</body>
+</html>
